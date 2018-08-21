@@ -1,0 +1,146 @@
+{!--- Base Template
+	This is the required base for creating a template. Fill in content for the new template's purpose!
+	*See template main/index for more template details; only details on this specific template will be documented --}
+
+{html_head}
+	<title>
+	Forms | RJI
+	</title>
+	{head_content}
+{html_head_end}
+<body>
+{embed="main/_navbar"}
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+    "@type": "ListItem",
+    "position": 1,
+    "item": {
+      "@id": "{site_url}forms",
+      "name": "Forms"
+    }
+  }]
+}
+</script>
+<ol class="breadcrumb">
+	<li><a href="{site_url}">Home</a></li>
+	<li class="active">Forms</li>
+</ol>
+
+<div id="main-section" class="container">
+<div class="row">
+
+	<div class="col-md-8 col-sm-12">
+
+		<div class="page-header">
+
+         <h1>Forms</h1>
+
+         <hr>
+
+         {if segment_1 == "forms" && segment_2 == ""}
+
+         <p>A list of forms available on the site will display here.</p>
+
+			{/if}
+
+         {if segment_1 == "forms" && segment_2 == "whats_new_qa"}
+
+            <h2>What are you doing now in your newsroom or ad agency that you weren’t doing a year ago?</h2>
+
+            <p>The Reynolds Journalism Institute at the Missouri School of Journalism has launched a Q&amp;A series featuring innovation and experimentation taking place in newsrooms and ad agencies. We’re looking for folks who would be willing to be interviewed for the series and share what they’re learning with others.</p>
+
+            <p><strong>What kinds of projects are we looking for?</strong> The sky is the limit. Are you using a new technology like AR/VR, Periscope or drones? Maybe you’ve found a new way of interacting or engaging with your audience &mdash; online or in person. If it’s new, different and worth sharing, we’d like to hear about it.</p>
+
+            <p><a href="/stories/series/whats-new-qa">Check out the series here.</a> If we’ve already written about the technology you’re using, feel free to submit your project anyway. Not all learning experiences are the same and not everyone is using the technologies for the same purpose or the same kinds of projects. Newsrooms/ad agencies come in all sizes. Projects come in all sizes, too, so don’t worry about yours being too big or too small. If you know of someone who has a project that would be a good fit for this series, feel free to forward this form to them.</p>
+
+            <p><strong>Please fill out the form below and we’ll be in touch. (All fields required.)</strong></p>
+
+            <div class="form-group">
+
+              {exp:freeform:form form_name="whats_new_qa"}
+
+               <dl>
+                  {freeform:all_form_fields}
+                     <dt><label>{freeform:field_label}</label></dt>
+                     <dd>{freeform:field_output}</dd>
+                  {/freeform:all_form_fields}
+               </dl>
+
+               <p>{freeform:submit}</p>
+
+               {/exp:freeform:form}
+
+            </div>
+
+         {/if}
+
+			{if segment_1 == "forms" && segment_2 == "contact_us_about_using_bots_for_engagement"}
+
+            <h2>Contact us about using bots for engagement</h2>
+
+            <p><a href="/account/profile/1431">Andrew Haeg</a>, founder of GroundSource and 2016–2017 RJI Fellow, is creating an in-depth report from a workshop held in August 2017 on using bots for engagement.</p>
+
+				<p>If you'd like to receive a copy of this report, please fill out this form.</p>
+
+            <p><strong>(All fields required.)</strong></p>
+
+            <div class="form-group">
+
+              {exp:freeform:form form_name="contact_us_about_using_bots_for_engagement"}
+
+               <dl>
+                  {freeform:all_form_fields}
+                     <dt><label>{freeform:field_label}</label></dt>
+                     <dd>{freeform:field_output}</dd>
+                  {/freeform:all_form_fields}
+               </dl>
+
+               <p>{freeform:submit}</p>
+
+               {/exp:freeform:form}
+
+            </div>
+
+         {/if}
+
+			{if segment_1 == "forms" && segment_2 == "video_request"}
+
+            <h2>Video request</h2>
+
+            <p>Would you like to live stream an event, create a video for an event or story? Fill out this form and we'll get back to you as soon as possible.</p>
+
+            <p><strong>(All fields required.)</strong></p>
+
+            <div class="form-group">
+
+              {exp:freeform:form form_name="video_request"}
+
+               <dl>
+                  {freeform:all_form_fields}
+                     <dt><label>{freeform:field_label}</label></dt>
+                     <dd>{freeform:field_output}</dd>
+                  {/freeform:all_form_fields}
+               </dl>
+
+               <p>{freeform:submit}</p>
+
+               {/exp:freeform:form}
+
+            </div>
+
+         {/if}
+
+		</div>
+		</div>
+
+		<div id="sidebar" class="col-sm-12 col-md-4">
+	  		{about_sidebar}
+	  	</div>
+
+  </div>
+  </div>
+
+{page_end}
