@@ -1,0 +1,74 @@
+{!--- Live Stream
+	The event live stream is now a template so that we can use the custome tracking software
+	*See template main/index for more template details; only details on this specific template will be documented --}
+
+{html_head}
+	<title>
+	RJI Live Stream
+	</title>
+	{head_content}
+
+	<script type="application/ld+json">
+	{
+	  "@context": "http://schema.org",
+	  "@type": "BreadcrumbList",
+	  "itemListElement": [{
+			"@type": "ListItem",
+			"position": 1,
+			"item": {
+			  "@id": "{site_url}",
+			  "name": "Home"
+			}
+		  },{
+			"@type": "ListItem",
+			"position": 2,
+			"item": {
+			  "@id": "{path='live_test/index'}",
+			  "name": "Live"
+			}
+		  }]
+	}
+	</script>
+
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+	<script type="text/javascript">
+    $(document).ready(function(){
+        $("#rosterModal").modal('show');
+    });
+	 </script>
+
+{html_head_end}
+<body>
+{embed="main/_navbar"}
+
+<ol class="breadcrumb">
+	<li><a href="{site_url}">Home</a></li>
+	<li class="active">Live</li>
+</ol>
+
+<div id="main-section" class="container">
+
+	<div class="row">
+
+		<div class="col-md-8 col-sm-12">
+
+			<h1>The Push Project: Setting Up An App For Your Newspaper</h1>
+
+			<h2>Monday, May 21 | 10 a.m.–3 p.m. CDT</h2>
+
+			<div><iframe id="ls_embed_1526587694" src="https://livestream.com/accounts/22537174/events/8210362/player?width=640&height=360&enableInfoAndActivity=true&defaultDrawer=&autoPlay=true&mute=false" width="640" height="360" frameborder="0" scrolling="no" style="width: 100%;" allowfullscreen> </iframe><script type="text/javascript" data-embed_id="ls_embed_1526587694" src="https://livestream.com/assets/plugins/referrer_tracking.js"></script></div>
+
+		</div>
+
+		<div id="sidebar" class="col-md-4 hidden-sm hidden-xs">
+
+			{embed="main/_sidebar" recent="YES" events="YES" related="NO" categories="YES" tags="YES" section="stories"}
+
+		</div>
+
+	</div>
+
+</div>
+
+{page_end}
